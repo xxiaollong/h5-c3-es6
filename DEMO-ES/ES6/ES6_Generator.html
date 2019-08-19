@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+
+    <script>
+        function* myGenerator(){
+            console.log("开始");
+            let result = yield;
+            console.log(result);
+            console.log("继续");
+            yield "";
+            console.log("结束");
+            return "END";
+        }
+        
+        // MG是一个遍历器对象
+        let MG = myGenerator();
+        console.log(MG);
+        console.log(MG.next());
+        console.log(MG.next("abc"));
+        console.log(MG.next());
+        console.log(MG.next());
+    
+    
+    </script>
+
+</head>
+<body>
+    
+</body>
+</html>

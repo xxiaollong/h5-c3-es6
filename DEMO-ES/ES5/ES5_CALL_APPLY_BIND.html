@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title></title>
+	</head>
+	<script type="text/javascript">
+		// call/apply/bind的作用:绑定函数和对象
+		
+		var obj = {
+			name:"Hello",
+			age:30
+		};
+		
+		function foo(data1, data2){
+			console.log(this, data1, data2)
+		};
+		
+		// 参数依次传入
+		foo.call(obj, 33, 44)
+		
+		// 参数通过数组传入
+		foo.apply(obj, [55, 66])
+		
+		// 返回一个函数,调用参数依次传入
+		foo.bind(obj)(77, 88);
+		
+		// bind示例,主要用于回调函数
+		setTimeout(function(){
+			// this为Windows对象
+			console.log(this);
+		}, 2000);
+		
+		setTimeout(function(){
+			// this为obj对象
+			console.log(this);
+		}.bind(obj), 2000);
+		
+	</script>
+	<body>
+	</body>
+</html>

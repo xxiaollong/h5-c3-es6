@@ -1,0 +1,301 @@
+/* 
+    页面练习样式
+*/
+body{
+    background: url('../imgs/polo360/bd-bg.png') repeat-x;
+}
+
+.clearfix::after, .clearfix::before{
+    content: "";
+    display: table;
+    clear: both;
+}
+
+.w{
+    width: 940px;
+    margin: 0 auto;
+}
+
+.header{
+    /* background-color: #bfa; */
+    padding-top: 37px;
+    padding-bottom: 46px;
+}
+
+.logo{
+    margin-left: 15px;
+}
+
+.nav{
+    float: right;
+    margin-top: 22px;
+}
+
+.nav li{
+    float: left;
+    padding: 0 10px 8px 10px;
+    border-left: 1px dotted #b6b6b6;
+
+}
+
+.nav li a{
+    text-decoration: none;
+    font: bold 14px Georgia;
+    color: #666;
+}
+
+.nav li a:hover{
+    color: rgb(205, 205, 205);
+    text-decoration: underline;
+}
+
+.nav li p{
+    font: 11px tahoma;
+    color: #b7b7b7;
+}
+
+.banner{
+    position: relative;
+    height: 356px;
+    background: url('../imgs/polo360/banner-bg.png') no-repeat bottom center;
+}
+
+.pointDiv{
+    position: absolute;
+    left: 15px;
+    top: 314px;
+}
+
+.pointDiv a{
+    margin-left: 4px;
+    float: left;
+    width: 17px;
+    height: 17px;
+    background: url('../imgs/polo360/pointer.png') no-repeat;
+}
+
+.pointDiv .active,
+.pointDiv a:hover
+{
+    background: url('../imgs/polo360/pointer-active.png') no-repeat;
+}
+
+.mian h1{
+    margin-bottom: 38px;
+    text-align: center;
+    font: bold 24px Georgia;
+    padding-top: 6px;
+    padding-bottom: 20px;
+    background: url('../imgs/polo360/line.png') no-repeat bottom center;
+
+}
+
+.mian  .pl, .mian  .cs, .mian  .uc,
+.contact .sc, .contact .co, .contact .nu
+{
+    float: left;
+    width: 300px;
+} 
+.mian  .cs,
+.contact .co
+{
+    margin: 0 20px;
+}
+
+.mian h2{
+    color: #11719e;
+    font: 21px Georgia;
+}
+
+.mian .p1{
+    color: #8c8c8c;
+    font: 12px Georgia;
+}
+
+.mian .imgDiv{
+    width: 299px;
+    height: 190px;
+    margin: 16px 0 10px 0;
+    text-align: center;
+    padding-top: 12px;
+    background: url('../imgs/polo360/img-bg.png') no-repeat;
+}
+
+.mian .p2{
+    height: 92px;
+    color: #3e3e3e;
+    font: 13px Helvetica;
+    word-spacing: 1px;
+}
+
+.mian .lm{
+    display: block;
+    width: 163px;
+    height: 40px;
+    margin-bottom: 35px;
+    text-decoration: none;
+    text-indent: 1em;
+    color: #016999;
+    font: 12px/40px Helvetica;
+    background: url('../imgs/polo360/btn1.png') no-repeat;
+}
+
+.contact{
+    background: url('../imgs/polo360/line.png') no-repeat top center;
+}
+
+.contact input{
+    width: 276px;
+    height: 33px;
+    line-height: 33px;
+    background: url('../imgs/polo360/input.png') no-repeat;
+    /* 
+        为I6设置背景图片不随元素滚动
+    */
+    _background-attachment: fixed;
+    border: none;
+    padding: 0 10px;
+    margin: 0 0 16px 0;
+}
+
+.contact textarea{
+   width: 276px;
+   height: 114px;
+   background: url('../imgs/polo360/textarea.png') no-repeat; 
+   border: none;
+   /* 去除滚动条 */
+   overflow: auto;
+    /* 
+        为I6设置背景图片不随元素滚动
+    */
+    _background-attachment: fixed;
+   /* 禁止调整大小 */
+   resize: none;
+   padding: 10px;
+   margin: 0;
+}
+
+.contact button{    
+    width: 163px;
+    height: 32px;
+    background: url('../imgs/polo360/btn2.png') no-repeat;
+    border: none;
+    padding: 0;
+    margin: 11px 0 23px 0;
+    color: white;
+    font: 13px Georgia;
+    text-align: left;
+    text-indent: 1em;
+
+}
+
+.contact h2{
+    color: #444;
+    font: 18px/1 Georgia;
+    border-bottom: 1px dashed #d3d3d3;
+    padding: 44px 0 10px 0;
+    margin-bottom: 15px;
+}
+
+.contact .sc .p1{
+    color: #444;
+    font: 12px/1 Helvetica;
+}
+
+.sc .icon{
+    margin-top: 4px;
+}
+
+.contact .sc .icon a{
+    display: block;
+    width: 54px;
+    height: 54px;
+    background-image: url('../imgs/polo360/content_sc_icon.png');
+    float: left;
+    margin-right: 6px;
+}
+
+.contact .sc .icon .a1{
+   background-position: -10px -10px;
+}
+.contact .sc .icon .a2{
+    background-position: -84px -10px;
+ }
+ .contact .sc .icon .a3{
+    background-position: -84px -84px;
+ }
+ .contact .sc .icon .a4{
+    background-position: -158px -10px;
+ }
+ .contact .sc .icon .a5{
+    background-position: -10px -84px;
+ }
+
+ .contact .sc .nl{
+     font: bolder 18px/1 'gill sans mt';
+     padding: 37px 0 10px;
+     margin-bottom: 15px;
+ }
+
+ .contact .sc input{
+     margin: 12px 0 0;
+ }
+
+.contact .sc .btn{
+    margin-top: 13px;
+}
+
+.contact .nu img{
+    float: left;
+    margin-right: 9px;
+}
+
+.contact .nu p{
+    color: #444;
+    font: 12px/1 Helvetica; 
+    height: 58px;
+    border-bottom: 1px dashed #d3d3d3;
+    padding-bottom: 9px;
+    margin-bottom: 14px;
+}
+
+.contact .nu p:last-of-type{
+    margin-bottom: 2px;
+}
+
+.contact .btn:hover{
+    cursor: pointer;
+}
+
+.footer{
+    height: 173px;
+    background-color: #333333;
+    border-top: 10px solid #4c4c4c;
+}
+
+.footer .w{
+    padding-top: 18px;
+}
+
+.footer a, .footer p{
+    text-decoration: none;
+    color: #999;
+    font: 12px Helvetica;
+}
+
+.footer p{
+    margin: 0 23px 6px 8px;
+}
+
+.footer p:first-child{
+    float: right;
+}
+
+.footer a:hover{
+    color: white;
+}
+
+
+
+
+

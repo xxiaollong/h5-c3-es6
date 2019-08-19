@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+</head>
+<body>
+    sessionStorage的使用:
+    <br>
+    <input type="text" name="uname" id="uname">
+    <br>
+    <input type="button" value="设置数据" id="setData">
+    <input type="button" value="获取数据" id="getData">
+    <input type="button" value="删除数据" id="delData">
+    
+    <script>
+        
+        // 设置sessionStorage中的值
+        // 生命周期：当前浏览器窗口
+        document.querySelector("#setData").onclick = function(){
+            let uName = document.querySelector("#uname").value;
+
+            window.sessionStorage.setItem("uname", uName);
+        }
+        // 获取sessionStorage中的值
+        document.querySelector("#getData").onclick = function(){
+            let uName = window.sessionStorage.getItem("uname");
+            console.log(uName);
+        }
+        // 获取sessionStorage中的值
+        document.querySelector("#delData").onclick = function(){
+            window.sessionStorage.removeItem("uname");
+        }
+    
+    </script>
+</body>
+</html>

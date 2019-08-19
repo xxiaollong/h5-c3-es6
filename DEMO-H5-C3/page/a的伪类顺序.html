@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title></title>
+		<style type="text/css">
+			/* 
+				涉及a标签的伪类有4个，优先级顺序如下：
+					link
+					visited
+					hover
+					active
+			 */
+			
+			/* 访问过的链接 */
+			a:link{
+				color: #0000FF;
+			}
+			/* 未访问过的链接 */
+			a:visited{
+				color: #008000;
+			}
+			/* 鼠标移入 */
+			a:hover{
+				color: #FFFF00;
+			}
+			/* 鼠标点击 */
+			a:active{
+				color: #FF0000;
+			}
+			
+		</style>
+	</head>
+	<body>
+		<a href="https://www.baidu.com">访问过的</a>
+		<a href="https://www.baidu.com123">没有访问过的</a>
+	</body>
+</html>

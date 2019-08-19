@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+    <script type="text/javascript">
+        let promise = new Promise((resolve, reject) => {
+            // 初始化完成
+            console.log(1111);
+            
+            let tmp = 10;
+            // 开启异步函数
+            setTimeout(() => {
+                console.log(333, tmp);
+                
+                // resolve(); //修改promise为成功状态
+
+                reject(304);   //修改promise为失败状态
+            }, 2000);
+
+        });
+        console.log(222);
+
+        promise.then(()=>{  //成功的回调函数
+            console.log("成功状态");
+        },(code)=>{ //失败的回调函数
+            console.log("失败状态", code);
+        });
+    
+    </script>
+
+</head>
+<body>
+    
+</body>
+</html>

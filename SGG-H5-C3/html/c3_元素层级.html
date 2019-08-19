@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+
+    <style>
+        .box1{
+            width: 200px;
+            height: 200px;
+            background-color: red;
+        }
+        /* 
+            通过opacity设置元素透明度：0-1
+         */
+        .box2{
+            width: 200px;
+            height: 200px;
+            background-color: yellow;
+            position: absolute;
+            top: 100px;
+            left: 100px;
+            z-index: 999;
+            opacity: 0.7;
+        }
+        /*
+             父元素的层级再高也盖不住子元素
+         */
+        .box3{
+            width: 200px;
+            height: 200px;
+            background-color: green;
+            position: relative;
+            z-index: 20;
+            top: 100px;
+        }
+        .box4{
+            width: 100px;
+            height: 100px;
+            background-color: orange;
+            position: absolute;
+           z-index: 10;
+        }
+        .s1{
+            width: 100px;
+            height: 100px;
+            background-color: blueviolet;
+        }
+    
+    </style>
+
+
+</head>
+<body>
+    <div class="box1"></div>
+    <div class="box2"></div>
+    <div class="box3">
+        <div class="box4"></div>
+    </div>
+
+
+</body>
+</html>

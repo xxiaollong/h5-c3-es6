@@ -1,0 +1,28 @@
+*{
+    padding: 0;
+    margin: 0;
+}
+form{
+    width: 600px;
+    margin: 20px auto;
+}
+form > fieldset{
+    padding: 10px;
+}
+form > fieldset > input,
+form > fieldset > meter{
+    width: 100%;
+    height: 30px;
+    line-height: 30px;
+    margin: 10px 0;
+    border: none;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    font-size: 14px;
+    padding-left: 10px;
+    box-sizing: border-box;
+
+}
+form > fieldset > meter{
+    padding-left: 0px;
+}

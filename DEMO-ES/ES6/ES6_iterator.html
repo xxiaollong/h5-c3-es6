@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+    <script>
+        // iterator是一种接口机制，为各种不同的数据结构提供统一的访问机制
+
+        function Myiterator(arr){
+            let nextIndex = 0;
+            return {
+                next : function(){
+                    return {value: arr[nextIndex++],
+                            done: nextIndex>=arr.length? true: false
+                    }
+                }
+            }
+        }
+
+        let arr = [1, 30, 74, "aeb"];
+        let myitorObj = Myiterator(arr);
+        // console.log(myitorObj.next());
+        // console.log(myitorObj.next());
+        // console.log(myitorObj.next());
+        // console.log(myitorObj.next());
+        // console.log(myitorObj.next());
+
+
+        // 将iterator接口部署到指定的数据类型上，可以使用for of去循环遍历
+        // 数组、字符串、argument、set容器、map容器
+        // 普通对象不能使用for of遍历
+        console.log("--------遍历数组------")
+        for (let i of arr) {
+            console.log(i);  
+        }
+
+        console.log("--------遍历字符串------")
+        let str = "abcde";
+        for(let i of str){
+            console.log(i);
+        }
+
+        console.log("--------遍历argument------")
+        function fun1(){
+            for(let i of arguments){
+                console.log(i);
+            }
+        }
+        fun1(10, 30, 'aaa');
+
+        
+
+
+    
+    </script>
+
+</head>
+<body>
+    
+</body>
+</html>

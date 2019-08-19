@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+
+    <style>
+        .box1{
+            margin: 100px 100px;
+            width: 200px;
+            height: 200px;
+            background-color: orange;
+        }
+
+        .box2{
+            width: 100px;
+            height: 100px;
+            background-color: greenyellow;
+            /* 
+                发生垂直高度重合，外边距传递到父元素
+             */
+            margin-top: 50px;
+            margin-left: 50px;
+        }
+
+        /* 
+            解决父子元素高度重叠
+         */
+        /* .box1::before{
+            content: "";
+            display: table;
+        } */
+
+        .box3{
+            border: 10px solid red;
+        }
+
+        .box4{
+            width: 100px;
+            height: 100px;
+            background-color: blueviolet;
+            float: left;
+        }
+
+        /* 
+            这样也能处理高度塌陷问题        
+         */
+        /* .clearfix::after{
+            content: "";
+            display: table;
+            clear: both;
+        } */
+        
+        /* 
+            统一处理父子元素高度重叠和高度塌陷问题
+         */
+        .clearfix::after, .clearfix::before{
+            content: "";
+            display: table;
+            clear: both;
+        }
+    
+    </style>
+
+</head>
+<body>
+
+    <div class="box3 clearfix">
+        <div class="box4"></div>
+    </div>
+
+    <div class="box1 clearfix">
+        <!-- 使用空table元素隔开，解决外边距高度重合，但是改变的文档结构，不够简洁 -->
+        <!-- <table></table> -->
+        <div class="box2">
+
+        </div>
+    </div>
+    
+</body>
+</html>

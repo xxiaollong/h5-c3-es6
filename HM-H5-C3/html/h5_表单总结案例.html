@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+    <link rel="stylesheet" href="../css/h5_form_student_document.css" />
+</head>
+<body>
+    <form action="#">
+        <fieldset>
+            <legend>学生档案</legend>
+            <label for="name">姓名：</label>
+            <input type="text" name="name" id="name" placeholder="请输入用户名">
+
+            <label for="phone">手机号码：</label>
+            <input type="tel" name="phone" id="phone" pattern="^1\d{10}">
+            
+            <label for="email">邮箱地址：</label>
+            <input type="email" name="email" id="email">
+            
+            <label for="collage">所属学院：</label>
+            <input type="text" name="collage" id="collage" placeholder="请选择" list="collages">
+            <datalist id="collages">
+                <option value="Java">Java</option>
+                <option value="Html">Html</option>
+                <option value="Python">Python</option>
+            </datalist>
+
+            <label for="score">入学成绩：</label>
+            <input type="number" name="score" id="score" max="100" min="0" value="50">
+            
+            <label for="">基础水平：</label>
+            <meter id="jcsp" max="100" min="0" low="40" value="50"></meter>
+            
+            <label for="indate">入学日期：</label>
+            <input type="date" name="indate" id="indate">
+
+            <label for="leavedate">毕业日期：</label>
+            <input type="date" name="leavedate" id="leavedate">
+
+            <input type="submit" value="提交">
+
+        </fieldset>
+    </form>
+
+    <script>
+        document.getElementById("score").oninput = function(){
+            document.getElementById("jcsp").value = this.value;
+        }
+    
+    </script>
+</body>
+</html>

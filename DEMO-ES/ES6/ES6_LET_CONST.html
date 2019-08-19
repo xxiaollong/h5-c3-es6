@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title></title>
+	</head>
+	
+	<body>
+		<button>测试1</button>
+		<button>测试2</button>
+		<button>测试3</button>
+
+	</body>
+	
+	<script type="text/javascript">
+		// 给按钮绑定点击事件
+		// let声明变量
+// 		let arr = document.getElementsByTagName('button');
+// 		for (let i = 0; i < arr.length; i++) {
+// 			let btn = arr[i];
+// 			btn.onclick = function(){
+// 				alert(i);
+// 			};
+// 		}
+	
+		// var + 闭包的方式
+// 		var buts = document.getElementsByTagName("button");
+// 		for (var i = 0; i < buts.length; i++) {
+// 			var but = buts[i];
+// 			(function(i){
+// 				but.onclick = function(){
+// 					alert(i)
+// 				}
+// 			})(i);
+// 		};
+
+		// 定义常量
+		const NAME = "HELLO";
+		console.log(NAME);
+		
+		// 对象的解构赋值
+		let obj1 = {
+			username:"KOBO",
+			age:32
+		};
+		
+		// let username = obj1.username;
+		// let age = obj1.age;
+		// let {username, age} = obj1;
+		// console.log(username, age);
+
+		//数组的结构赋值
+		// let arr1 = [1, 2, 6, 'abc', true, 0.25]
+		// let [a, b ,c, d] = arr1;
+		// let [,,,e, f] = arr1;
+		// console.log(a, b, c)
+		// console.log(e, f)
+
+		// 结构的使用
+		// function foo({username, age}){
+		// 	console.log(username, age);
+		// }
+		// foo(obj1);
+
+		// 模板字符串
+		// let str1 = '名字： ' + obj1.username + ' 年龄： ' + obj1.age;
+		// console.log(str1);
+		// let str2 = `名字： ${obj1.username} 年龄： ${obj1.age}`;
+		// console.log(str2);
+
+		// 对象的简化写法
+		let name1 = "HTML";
+		let age1 = 50;
+		// 之前写法
+		let obj2 = {
+			name1: name1,
+			age1: age1,
+			// 之前写法
+			getName : function(){
+				return this.name1;
+			}
+		}
+		console.log(obj2);
+		console.log(obj2.getName());
+		// 简化写法
+		let obj3 = {
+			name1,
+			age1,
+			getName(){
+				return this.name1;
+			}
+		}
+		console.log(obj3);
+		console.log(obj3.getName());
+		
+
+
+		
+	</script>
+</html>

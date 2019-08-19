@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+
+    <Script>
+        let obj1 = {
+            name : "haha",
+            age : 50
+        }
+        
+        // Object对象取值方法
+        console.log(obj1["name"]);
+        console.log(obj1.age);
+
+        // 浅克隆
+        let obj2 = obj1;
+        console.log(obj1);
+        obj2.name = "fofofo";
+        console.log(obj1);
+
+        // 浅克隆
+        let obj3 = Object.assign(obj1);
+        console.log(obj1);
+        obj3.age = 60;
+        console.log(obj1);
+        
+        // 深度克隆（对象、数组）
+        let obj4 = JSON.parse(JSON.stringify(obj1));
+        console.log(obj1);
+        obj4.age = 80;
+        console.log(obj1, obj4);
+
+        // 获取类型的方法
+        let str1 = "asd";
+        let arr1 = [11, 22];
+        let i1 = 10;
+        let f1 = 10.23;
+        console.log(Object.prototype.toString.call(obj1).slice(8, -1));
+        console.log(Object.prototype.toString.call(arr1).slice(8, -1));
+        console.log(Object.prototype.toString.call(str1).slice(8, -1));
+        console.log(Object.prototype.toString.call(i1).slice(8, -1));
+        console.log(Object.prototype.toString.call(f1).slice(8, -1));
+
+        // for in 循环  对象（属性名） 数组（下标）
+        console.log("--------for in 对象--------");
+        for(let i in obj1){
+            console.log(i);
+        }
+        console.log("--------for in 数组--------");
+        for(let i in arr1){
+            console.log(i);
+        }
+
+        // 自定义深度克隆方法
+        console.log("--------自定义深度克隆方法--------");
+        // 检测数据类型的方法
+        function checkDataType(data){
+            return Object.prototype.toString.call(data).slice(8, -1);
+        }
+        
+        // 克隆方法
+        function clone(target){
+            // 声明返回的数据变量
+            let result;
+            
+            // 获取数据类型
+            let targetType = checkDataType(target);
+            
+            // 判断返回变量的数据类型
+            if(targetType === "Object"){    //将变量声明为对象类
+                result = {};
+            }else if(targetType === "Array"){   //将变量声明为数组类型
+                result = [];
+            }else{  // 基本数据类型，直接返回对应值
+                return target;
+            }
+
+            // 遍历对象和数组类型的数据，直至基础数据类型，返回基础类型数据的值
+            for(let i in target){
+                let value = target[i];
+                let valueType = checkDataType(value);
+                if(valueType === "Object" || valueType === "Array"){
+                    result[i] = clone(value);
+                }else{
+                    result[i] = value;
+                }
+            }
+
+            return result;
+        }
+
+        let arr2 = [12, true, {name:"HAHA",age:50,fs:[10, 20, 30]}, "abc"];
+        let arr3 = clone(arr2);
+        console.log(arr2, arr3);
+        arr3[2].name = "FFF";
+        console.log(arr2, arr3);
+
+
+
+
+    
+    </Script>
+</head>
+<body>
+    
+</body>
+</html>

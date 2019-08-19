@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+        }
+        .nav{
+            /* 背景蓝色 */
+            background-color: rgb(70, 73, 238);
+            /* 设置宽度 */
+            width: 1000px;
+            /* 居中 */
+            margin: 30px auto;
+            /* 子元素浮动，解决高度塌陷 */
+            overflow: hidden;
+            /* 去除点 */
+            list-style: none;
+        }
+        .nav li{
+            /* 浮动排列在一行 */
+            float: left;
+           /* 设置宽度 */
+           width: 25%;
+        }
+        .nav li a{
+            /* 转为块元素 */
+            display: block;
+            /* 设置边框 */
+            padding: 5px 0;
+            /* 设置宽度 */
+            width: 100%;
+            /* 颜色 */
+            color: white;
+            /* 去下划线 */
+            text-decoration: none;
+            /* 加粗 */
+            font-weight: bold;
+            /* 居中 */
+            text-align: center;
+        }
+        
+        /* 鼠标移入事件 */
+        .nav li a:hover{
+            background-color: rgb(201, 60, 60);
+        }
+    </style>
+
+</head>
+<body>
+    <ul class="nav">
+        <li><a href="#">首页</a></li>
+        <li><a href="#">新闻</a></li>
+        <li><a href="#">联系</a></li>
+        <li><a href="#">关于</a></li>
+    </ul>    
+</body>
+</html>

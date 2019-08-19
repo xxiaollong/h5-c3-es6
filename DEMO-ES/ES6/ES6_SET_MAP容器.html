@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+    <script>
+        // set容器：无序的不可重复的多个value的集合体
+        // 初始化Set集合
+        let set1 = new Set([1,2,3,1,2]); 
+        console.log(set1.size, set1);
+        // 遍历set容器
+        set1.forEach(i => {
+            console.log(i);
+        });
+        // 添加元素
+        set1.add(4);
+        console.log(set1.size, set1);
+        // 删除某个元素
+        set1.delete(1);
+        set1.delete(10);
+        console.log(set1.size, set1);
+        // 判断是否存在某个元素
+        console.log(set1.has(3));
+        console.log(set1.has(5));
+        // 清空容器
+        set1.clear();
+        console.log(set1.size, set1);
+        
+        console.log("--------MAP容器-------");
+        // map容器: 无序不重复的key，多个key-value的集合体
+        let map1 = new Map([["name", "haha"], ["age", 52], [50, 100]]);
+        console.log(map1.size, map1);
+        // 遍历map
+        map1.forEach((value, key) =>{
+            console.log(key, value);
+        });
+        // 添加元素
+        map1.set("sal", 2000);
+        console.log(map1.size, map1);
+        // 获取元素
+        console.log(map1.get("name"));
+        // 判断是否存在某个元素
+        console.log(map1.has("haha"));
+        console.log(map1.has("age"));
+        // 删除元素
+        map1.delete("age");
+        console.log(map1.size, map1);
+        // 获取key的集合
+        let keys = map1.keys();
+        console.log(keys);
+        for(let key of keys){
+            console.log(key);
+        }
+        // 获取value的集合
+        let values = map1.values();
+        console.log(values);
+        // 清空map容器
+        map1.clear();
+        console.log(map1.size, map1);
+
+    </script>
+
+</head>
+<body>
+    
+</body>
+</html>
+

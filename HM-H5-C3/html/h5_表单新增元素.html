@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+
+</head>
+<body>
+    <form action="#">
+
+        专业：<select name="" id="">
+            <option value="1">Java</option>
+            <option value="2">Pthon</option>
+            <option value="3">Html</option>
+            <option value="4" label="英语" />
+            <option value="5" label="数学" />
+
+        </select>
+        <br>
+
+        网址：<input type="url" name="url" list="urls">
+        <datalist id="urls">
+            <option value="http://www.baidu.com">百度</option>
+            <option value="http://www.sohu.com">搜狐</option>
+            <option value="http://www.163.com">网易</option>
+        </datalist>
+        <br>
+        <!-- 
+            output: 语义标签，只能显示，不能修改
+                    需要设置值，不能计算
+         -->
+        金额：<output>$100.00</output>
+        <br>
+        进度条：<progress max="100" value="50"></progress>
+        不确定进度条：<progress></progress>
+        <br>
+        度量器：<meter max="100" min="0" high="80" low="40" value="30"></meter>
+        <meter max="100" min="0" high="80" low="40" value="60"></meter>
+        <meter max="100" min="0" high="80" low="40" value="90"></meter>
+    
+
+
+    </form>
+
+
+</body>
+</html>

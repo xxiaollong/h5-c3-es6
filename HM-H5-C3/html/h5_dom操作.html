@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+    <style>
+        .sel{
+            color: red;
+        }
+        .java{
+            color: green;
+        }
+        .html{
+            color: gray;
+        }
+        .python{
+            color:fuchsia;
+        }
+    </style>
+</head>
+<body>
+    <li>请选择</li>
+    <input type="button" value="为第一个li元素添加样式" id="add">
+    <li class="java">Java</li>
+    <input type="button" value="为第二个li元素移除样式" id="del">
+    <li id="html">Html</li>
+    <input type="button" value="为第三个li元素切换样式" id="toggle">
+    <li class="python">Python</li>
+    <input type="button" value="判断第四个li元素是否包含某个样式" id="contains">
+
+</body>
+
+
+<script>
+    window.onload = function(){
+        // add 添加指定名称的样式
+        document.querySelector("#add").onclick = function(){
+            document.querySelector("li").classList.add("sel");
+        }       
+        
+        // remove 移除指定名称的样式
+        document.querySelector("#del").onclick = function(){
+            document.querySelector(".java").classList.remove("java");
+        } 
+
+        // toggle 有指定样式，则移除，没有指定样式，则添加
+        document.querySelector("#toggle").onclick = function(){
+            document.querySelector("#html").classList.toggle("html");
+        } 
+        
+        // toggle 有指定样式，则移除，没有指定样式，则添加
+        document.querySelector("#contains").onclick = function(){
+            console.log(document.querySelector(".python").classList.contains("html"));
+            console.log(document.querySelector(".python").classList.contains("python"));
+        }
+
+        // 获取元素添加的样式名称
+        let claList = document.querySelector(".java").classList;
+        console.log(claList.length, claList);
+
+
+        // 获取Java的li标签
+        let java_li_1 = document.getElementsByTagName("li")[1];
+        console.log(java_li_1);
+        
+        // querySelector 返回满足条件的第一个元素
+        // 参数为id选择器（#），类选择器（.）,标签
+        console.log("-------querySelector-------");
+        let java_li_3 = document.querySelector(".java");
+        console.log(java_li_3);
+        let html_li_1 = document.querySelector("#html");
+        console.log(html_li_1);
+        let li_1 = document.querySelector("li");
+        console.log(li_1);
+
+        // querySelectorAll 返回满足条件的数组
+        console.log("-------querySelectorAll-------");
+        let lis_1 = document.querySelectorAll("li");
+        lis_1.forEach(li =>{
+            console.log(li);
+            
+        });
+    }
+
+</script>
+
+</html>

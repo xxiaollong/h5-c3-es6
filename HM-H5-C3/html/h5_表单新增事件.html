@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+
+
+</head>
+<body>
+    <form action="#">
+        用户名：<input type="text" name="name" id="name">
+        <br>
+        电话：<input type="tel" name="tel" id="tel" pattern="^1\d{10}">
+        <br>
+        <button>提交</button>
+    </form>
+
+    <script>
+        // 键盘操作导致内容改变是触发
+        document.getElementById("name").onkeyup = function(){
+            console.log("onkeyup: ", this.value);
+        }
+        // 内容改变是触发
+        document.getElementById("name").oninput = function(){
+            console.log("oninput: ", this.value);
+        }
+        // 验证不通过时触发
+        document.getElementById("tel").oninvalid = function(){
+            this.setCustomValidity("请输入合法的电话号");
+        }
+    
+    </script>
+    
+</body>
+</html>

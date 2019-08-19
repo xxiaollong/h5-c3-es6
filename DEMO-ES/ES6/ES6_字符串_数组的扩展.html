@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+
+    <script>
+
+        // 字符串
+        console.log("--------字符串-------");
+        let str1 = "hsfasdifahsidfaus";
+        // includes()   判断是否包含子串
+        console.log(str1.includes("fas"));
+        // startsWith() 判断字符串是否以指定子串开始
+        console.log(str1.startsWith("hs"));
+        // endsWith()   判断字符串是否以指定子串结束
+        console.log(str1.endsWith("aa"));
+        // repeat() 以指定次数拼接成新字符串
+        console.log(str1.repeat(2));
+
+        // 数值
+        console.log("--------数值-------")
+        // isFinite()   判断是否为无穷大数
+        console.log(Number.isFinite(123));
+        console.log(Number.isFinite(Infinity));
+        // isNaN()  判断是否为NaN
+        console.log(Number.isNaN(NaN));
+        // 判断是否为整数
+        console.log(Number.isInteger(123.2));
+        console.log(Number.isInteger(123.0));
+        console.log(Number.isInteger(123));
+        // 将字符串转换为整数
+        console.log(Number.parseInt("1234"));
+        console.log(Number.parseInt("1234abc"));
+        console.log(Number.parseInt("1234.25"));
+        // 取整
+        console.log(Math.trunc(123.25));
+        console.log(Math.trunc("123.25"));
+
+        // 对象
+        console.log("--------对象-------");
+        console.log(0 == -0);
+        console.log(NaN == NaN);
+        // Object.is() 判断两个对象是否相等
+        console.log(Object.is(0, -0));
+        console.log(Object.is(NaN, NaN));
+        
+        let obj1 = {}
+        let obj2 = {
+            name : "Hello",
+            age : 42
+        }
+        let obj3 = {
+            name : "hahah",
+            sal : 235
+        }
+        // 将资源对象的属性赋值给目标对象
+        Object.assign(obj1, obj2, obj3);
+        console.log(obj1);
+        
+        // __proto__操作对象属性
+        let obj4 = {}
+        obj4.__proto__ = obj3;
+        console.log(obj4);
+        console.log(obj4.name);
+
+
+    
+    </script>
+
+</head>
+<body>
+    <button>测试1</button>
+    <button>测试2</button>
+    <button>测试3</button>
+    
+
+    <script>
+        // 数组
+        console.log("--------数组-------")
+        let buts = document.getElementsByTagName("button");
+        //  Array.from()    将伪数组或者可遍历对象转换为真数组 
+        Array.from(buts).forEach(but => {
+            console.log(but);
+        });
+
+        // Array.of()   将一系列值转换为数组
+        let arr1 = Array.of(12, "ebeb", 12.6, true);
+        console.log(arr1);
+        
+        let arr2 = [2, 3, 4, 5, 6, 7];
+        // 找出数组中第一个满足条件的元素
+        let firstResult = arr2.find(function(item, index){
+            return item > 4;
+        });
+        console.log(firstResult);
+        
+         // 找出数组中第一个满足条件的元素的下标
+        let firstIndex = arr2.findIndex(function(item, index){
+            return item > 4;
+        });
+        console.log(firstIndex);
+        
+
+        
+
+    </script>
+</body>
+</html>

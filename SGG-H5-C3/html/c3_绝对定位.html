@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+
+    <style>
+        .box1{
+            width: 200px;
+            height: 200px;
+            background-color: red;
+        }
+        /* 
+            绝对定位相对于离他最近的一个祖先元素开启定位
+            绝对定位使元素脱离文档流：提升一个层级
+         */
+        .box2{
+            width: 200px;
+            height: 200px;
+            background-color: yellow;
+            position: absolute;
+            top: 0px;
+            left: 0px;
+  
+        }
+        .box3{
+            width: 400px;
+            height: 400px;
+            background-color: green;
+            position: relative;
+        }
+        /* 
+            绝对定位改变元素性质：内联元素变成块元素
+         */
+        .s1{
+            width: 200px;
+            height: 200px;
+            background-color:blueviolet;
+            position: absolute;
+        }
+
+    
+    </style>
+
+
+</head>
+<body>
+    <div class="box1"></div>
+    
+    <div class="box3">
+        <div class="box2"></div>
+    </div>
+
+    <span class="s1">我是一个span标签</span>
+
+
+</body>
+</html>

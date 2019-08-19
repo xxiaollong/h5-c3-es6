@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+    <script>
+        function Persion(name, age){
+            this.name = name;
+            this.age = age;
+        }
+
+        let persion = new Persion("kobe", 60);
+        console.log(persion);
+
+        class Animal{
+            // 构造方法
+            constructor(name, age){
+                this.name = name;
+                this.age = age;
+            }
+            
+            // 一般方法
+            showName(){
+                console.log(this.name);
+            }
+        }
+
+        let animal = new Animal("tom", 5);
+        console.log(animal);
+        animal.showName();
+
+
+        class Cat extends Animal{
+            constructor(name, age, food){
+                // 调用父类的构造方法
+                super(name, age);
+                this.food = food;
+            }
+
+            // 方法重写
+            showName(){
+                console.log("Cat：", this.name);
+            }
+        }
+
+        let cat = new Cat("tom2", 4, "鱼");
+        console.log(cat);
+        cat.showName();
+        
+
+    </script>
+</head>
+<body>
+    
+</body>
+</html>

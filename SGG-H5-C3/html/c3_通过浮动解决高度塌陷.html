@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+    <style>
+        .box1{
+            border: 1px solid rgb(187, 44, 44);
+        }
+        .box2{
+            width: 100px;
+            height: 100px;
+            background-color: rgb(162, 199, 60);
+            float: left;
+        }
+        .box3{
+            clear: both;
+        }
+
+
+        .box11{
+            margin-top: 10px;
+            border: 1px solid rgb(34, 75, 163);
+        }
+        .box22{
+            width: 100px;
+            height: 100px;
+            background-color: rgb(216, 48, 202);
+            float: left;
+        }
+        .clearfix::after{
+            /* 添加内容并转换为块元素 */
+            content: "";
+            display: block;
+            clear: both;
+        }
+    
+    </style>
+
+</head>
+<body>
+    <div class="box1">
+        <div class="box2"></div>
+        <div class="box3"></div>
+    </div> 
+
+    <div class="box11 clearfix">
+        <div class="box22"></div>
+    </div>
+</body>
+</html>

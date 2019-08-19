@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+    <link href="https://cdn.bootcss.com/font-awesome/5.10.0-11/css/all.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="../css/h5_videoPlayer.css">
+</head>
+<body>
+    <h3 class="playerTitle">视频播放器</h3>
+    <div class="player">
+        <video src="E:\file\h5file\experience.mp4"></video>        
+        <div class="controls">
+            <a href="javascript:;" class="switch fa fa-play"></a>
+            <a href="javascript:;" class="expand fa fa-expand"></a>
+
+            <div class="progress">
+                <div class="bar"></div>
+                <div class="loaded"></div>
+                <div class="elapse"></div>
+            </div>
+
+            <div class="time">
+                <span class="currentTime">00:00:00</span>
+                /
+                <span class="totalTime">00:00:00</span>
+            </div>
+        </div>
+    </div>
+    <script src="https://cdn.bootcss.com/jquery/3.4.1/jquery.min.js"></script>
+    <script>
+        $(function(){
+            // 获取播放器
+            let video = $("video")[0];
+
+            // 实现播放与暂定
+            $(".switch").click(function(){
+                if(video.paused){
+                    video.play();
+                }else{
+                    video.pause();
+                }
+                
+                // 切换按钮样式
+                $(this).toggleClass("fa-play fa-pause");
+            });
+
+            // 实现全屏切换
+            $(".expand").click(function(){   
+                video.exitFullscreen();
+             
+                // 切换按钮样式
+                $(this).toggleClass("fa-expand fa-compress");
+            });
+
+            // 当视频文件加载好了之后，开始播放
+            video.oncanplay = function(){
+                setTimeout(function(){
+                    // 将视频文件设置为显示
+                    video.style.display = "block";
+                    // 显示视频时长
+                    $(".totalTime").html(getFormatTime(video.duration));
+                }, 2000);
+            }
+
+            // 播放过程的逻辑处理
+            video.ontimeupdate = function(){
+                // 显示当前播放时间
+                let total = video.duration;
+                let current = video.currentTime;
+                $(".currentTime").html(getFormatTime(current));
+                let width = Math.floor(current/total * 100) + "%";
+                $(".elapse").css("width", width);
+            }
+
+            // 视频跳播
+            $(".bar").click(function(e){
+                // 偏移值
+                let offsetX = e.offsetX;
+                // 总时长
+                let total = video.duration;
+                // 父元素宽度
+                let parentWidth = $(this).width();
+                // 当前时间
+                let current = Math.floor((offsetX/parentWidth) * total);
+                video.currentTime = current;
+                // console.log(current);
+            });
+
+            // 视频播放完毕重置播放器
+            video.onended = function(){
+                video.currentTime = 0;
+                $(".switch").removeClass("fa-pause").addClass("fa-play");
+            }
+
+        });
+        
+        // 格式化时间
+        function getFormatTime(total){
+            total = Math.floor(total);
+            let hh =  Math.floor(total / 3600);
+            let mm = Math.floor((total - 3600 * hh) / 60);
+            let ss = total - 3600 * hh - 60 * mm;
+            hh = hh < 10? ("0"+hh): hh;
+            mm = mm < 10? ("0"+mm): mm;
+            ss = ss < 10? ("0"+ss): ss;
+
+            return `${hh}:${mm}:${ss}`;
+        }
+    </script>
+</body>
+</html>

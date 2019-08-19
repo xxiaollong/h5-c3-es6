@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+
+    <script>
+        function fun1(...value){
+            console.log(value);
+            value.forEach(function(item, index){
+                console.log(index, item);
+            });
+        };
+
+        fun1(20, 50, 60);
+
+        function fun2(v1, ...value){
+            console.log(v1);
+            console.log(value);
+            value.forEach(function(item, index){
+                console.log(index, item);
+            });
+        };
+
+        fun2(12, 22, 33, 55);
+
+        let arr = [1, 6];
+        let arr1 = [2, 3, 4, 5]
+        arr = [1, ...arr1, 6];
+        console.log(arr);
+
+
+    </script>
+
+</head>
+<body>
+    
+</body>
+</html>

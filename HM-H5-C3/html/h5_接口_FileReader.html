@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+    <script>
+        function showPhotoFile(){
+            let reader = new FileReader();
+            let file = document.querySelector("#myfile").files[0];
+
+            console.log(file);
+            reader.readAsDataURL(file);
+            
+            // 等到文件读取完成后触发
+            reader.onload = () =>{
+                document.querySelector("#show_img").src = reader.result;
+            }
+
+        }
+        
+    </script>
+</head>
+<body>
+    <form action="#">
+        文件：<input type="file" name="myfile" id="myfile" onchange="showPhotoFile()">
+        <br>
+        
+        <input type="submit" value="提交">
+
+    </form>
+
+    <img src="" alt="" id="show_img">
+    
+</body>
+
+
+</html>

@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+    <script type="text/javascript">
+
+        // 函数体只有一条语句，可以省略函数体的{}
+
+        let fun1 = () => console.log("定义了一个箭头函数fun1");
+        fun1();
+
+        let fun2 = (str) => console.log(`形参str=${str}的箭头函数`);
+        fun2("ABC");
+
+        let fun3 = (a, b) => console.log(`a=${a}, b=${b}, a+b=${a+b}`);
+        fun3(20, 30);
+
+        let fun4 = (a, b) => a + b;
+        console.log(fun4(60, 40));
+
+        let fun5 = (a, b) => {
+            return a+b;
+        };
+        console.log(fun5(4, 6));
+
+        let fun6 = (a, b) => {
+            console.log(`a=${a}, b=${b}`);
+            let sum = a + b;
+            return sum;
+        };
+        console.log(fun6(17, 3));
+        
+
+    </script>
+
+</head>
+<body>
+
+    <button id="bt1">BT1</button>
+    <button id="bt2">BT2</button>
+    <button id="bt3">BT3</button>
+    <button id="bt4">BT4</button>
+    
+    <script type="text/javascript">
+        // 常规函数，谁调用，谁就是this
+        let bt1 = document.getElementById("bt1");
+        bt1.onclick = function(){
+            console.log(this);
+        };
+        
+        
+        // 若箭头函数定义时有外层函数，则外层函数的this就是它的this
+        // 若箭头函数定义时没有外层函数，则它的this为window
+        let bt2 = document.getElementById("bt2");
+        bt2.onclick = () => {   //该箭头函数定义是处于window对象
+            console.log(this);
+        };
+
+        // 定义一个对象，在该对象的方法中调用箭头函数
+        let obj1 = {
+            name : "箭头函数对象",
+            getName(){  // 外层函数为常规函数
+                let bt3 = document.getElementById("bt3");
+                bt3.onclick = () => { //该箭头函数的this与外层函数的this一致
+                    console.log(this);
+                };
+            },
+        };
+
+        obj1.getName();
+
+        // 定义一个对象，在该对象的方法中调用箭头函数
+        let obj2 = {
+            name : "箭头函数对象",
+            getName: () => {   // 外层函数为箭头函数
+                let bt4 = document.getElementById("bt4");
+                bt4.onclick = () => { //该箭头函数的this与外层函数的this一致
+                    console.log(this);
+                };
+            },
+        };
+
+        // 该调用的本质为 obj2.getName = () => {}
+        obj2.getName();
+        
+        
+
+
+    
+    </script>
+
+</body>
+</html>

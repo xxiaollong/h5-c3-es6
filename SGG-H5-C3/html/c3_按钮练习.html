@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+    
+    <style>
+        .a1{
+            display: block;
+            width: 72px;
+            height: 72px;
+            margin: 50px auto;
+            background-image: url('../imgs/css_sprites.png');
+        }
+        .a1:link{
+            background-position: -194px -10px;
+        }
+        .a1:hover{
+            background-position: -10px -10px;
+        }
+        .a1:active{
+            background-position: -10px -194px;
+        }
+
+        body{
+            height: 5000px;
+            /* background-color: #e1f1dd;
+            background-image: url('../imgs/61007.jpg');
+            background-repeat: no-repeat;
+            background-attachment: fixed;
+            background-position: center center; */
+            
+            /* 简写方式，不写的采用默认值 */
+            background: url('../imgs/61007.jpg') no-repeat center center fixed; 
+            
+            background-color: #e1f1dd;
+        }
+        
+        
+    
+    </style>
+
+</head>
+<body>
+    <div class="booo"></div>
+    <a href="#" class="a1"></a>
+
+</body>
+</html>

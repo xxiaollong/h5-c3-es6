@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+    <script>
+        // 创建symbol属性
+        let symbol = Symbol();
+        console.log(symbol);
+
+        let obj1 = {
+            username : "Kobe",
+            age : 30
+        }
+
+        obj1[symbol] = "hello";
+        console.log(obj1);
+        // for in/of 不能遍历出对象的symbol属性
+        for(let u in obj1){
+            console.log(u);
+        }
+
+
+
+        // 可以用来定义常量
+        const PERSON_KEY = "HELLO";
+        console.log(PERSON_KEY);
+        // PERSON_KEY = "WORLD";
+        // console.log(PERSON_KEY);
+
+        const Person_Key = Symbol("preson_key");
+        console.log(Person_Key);
+
+
+    
+    </script>
+
+
+</head>
+<body>
+    
+</body>
+</html>

@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+
+    <style>
+        .box1{
+            width: 200px;
+            height: 200px;
+            background-color: red;
+        }
+        /* 
+            固定定位相对于浏览器窗口进行定位
+            固定定位使元素脱离文档流：元素提升一个层级
+         */
+        .box2{
+            width: 200px;
+            height: 200px;
+            background-color: yellow;
+            position: fixed;
+            top: 0px;
+            left: 0px;
+           
+        }
+        .box3{
+            width: 200px;
+            height: 200px;
+            background-color: green;
+        }
+        .box4{
+            width: 200px;
+            height: 200px;
+            background-color: orange;
+            position: relative;
+        }
+        /* 
+            固定定位改变元素属性：使内联元素变为块元素
+         */
+        .s1{
+            width: 100px;
+            height: 100px;
+            background-color: blueviolet;
+            position: fixed;
+        }
+        body{
+            height: 5000px;
+        }
+    
+    </style>
+
+
+</head>
+<body>
+    <div class="box1"></div>
+    <div class="box4">
+        <div class="box2"></div>
+    </div>
+    <span class="s1">我是一个span标签</span>
+    <div class="box3"></div>
+
+
+</body>
+</html>

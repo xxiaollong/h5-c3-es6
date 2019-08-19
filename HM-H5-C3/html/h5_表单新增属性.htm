@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+</head>
+<body>
+    <form action="#" id="myf">
+        <!-- 
+            placeholder: 提示文本
+            autofocus: 自动获取光标
+            autocomplete: 自动补全（1.曾经提交过、2.当前控件要有nume属性）
+         -->
+        姓名：<input type="text" name="name" id="name" placeholder="请输入用户名" 
+        autofocus autocomplete="on"> <br>
+        密码：<input type="password" name="pasd" id="pasd"> <br>
+        <!-- 
+            multiple: 允许输入多个邮箱地址，用逗号分隔
+        -->
+        邮箱：<input type="email" name="email" id="email" multiple> <br>
+        <!-- 
+            required: 必填字段
+            pattern: 正则验证的表达式
+                *: 任意个数
+                ?: 0或1个
+                +: 1或多个
+                ^: 开头
+         -->
+        电话：<input type="tel" name="tel" id="tel" required 
+        pattern="^(\+86)?1\d{10}"> <br>
+        网址：<input type="url" name="url" id="url"> <br>
+        数量：<input type="number" name="number" id="number"> <br>
+        搜索：<input type="search" name="search" id=""> <br>
+        范围：<input type="range" name="range" id=""> <br>
+        颜色：<input type="color" name="" id=""> <br>
+        时间：<input type="time" name="" id=""> <br>
+        日期：<input type="date" name="" id=""> <br>
+        日期时间: <input type="datetime-local" name="" id=""> <br>
+        月份：<input type="month" name="" id=""> <br>
+        星期：<input type="week" name="" id=""> <br>
+        <!-- 
+            multiple: 可以选择多个文件
+         -->
+        文件：<input type="file" name="" id="" multiple> <br>
+
+        <button type="submit">提交</button> <br>
+
+    </form>
+
+    <!-- 
+        将外部元素包含到指定表单中提交
+     -->
+    地址：<input type="text" name="address" form="myf">
+    
+</body>
+</html>

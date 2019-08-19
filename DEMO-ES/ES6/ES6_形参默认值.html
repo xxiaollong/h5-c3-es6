@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+    
+    <script type="text/javascript">
+        function Point(x, y){
+            this.x = x;
+            this.y = y;
+        }
+
+        let point1 = new Point(20, 30);
+        console.log(point1);
+
+        // x/y的值为undefined
+        let point2 = new Point();
+        console.log(point2);
+        
+        // 形参默认值
+        function Point2(x=0, y=0){
+            this.x = x;
+            this.y = y;
+        }
+
+        // 不传值则使用形参默认值
+        let point3 = new Point2();
+        console.log(point3);
+        
+
+
+    </script>
+
+</head>
+<body>
+    
+</body>
+</html>

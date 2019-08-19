@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+    <style>
+        div{
+            text-align: center;
+        }
+    </style>
+</head>
+<body>
+    <div>
+        <img src="E:\file\h5file\2326.png" alt="">
+        <button id="full">全屏</button>
+        <button id="cancelFull">退出全屏</button>
+        <button id="isFull">是否全屏</button>
+    </div>
+    
+</body>
+
+<script>
+    window.onload = function(){
+
+        let div = document.querySelector("div");
+
+        // requestFullscreen(): 全屏显示
+        document.querySelector("#full").onclick = function(){
+            div.requestFullscreen();
+        }
+
+        document.querySelector("#cancelFull").onclick = function(){
+            div.cancelFullScreen();
+        }       
+
+
+    }
+
+</script>
+
+</html>

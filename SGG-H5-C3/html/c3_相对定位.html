@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+
+    <style>
+        .box1{
+            width: 200px;
+            height: 200px;
+            background-color: red;
+        }
+        /* 
+            相对定位相对于它之前的位置开启定位
+            相对定位不使元素脱离文档流
+         */
+        .box2{
+            width: 200px;
+            height: 200px;
+            background-color: yellow;
+            /* margin-left: 200px;
+            margin-top: 200px; */
+            position: relative;
+            left: 200px;
+            top: 200px;
+        }
+        .box3{
+            width: 200px;
+            height: 200px;
+            background-color: green;
+            /* margin-top: -200px; */
+        }
+        /* 
+            相对定位不改变元素属性
+         */
+        .s1{
+            width: 100px;
+            height: 100px;
+            background-color: blueviolet;
+            position: relative;
+        }
+    
+    </style>
+
+
+</head>
+<body>
+    <div class="box1">BOX1</div>
+    <div class="box2">BOX2</div>
+    <div class="box3">BOX3</div>
+    <span class="s1">我是一个span标签</span>
+
+
+</body>
+</html>

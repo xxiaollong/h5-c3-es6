@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title>属性选择器</title>
+		<style type="text/css">
+			/* 
+				为含有title属性的P标签设置黄色背景
+			 */
+			p[title]{
+				background-color: yellow;
+			}
+			/* 
+				为含有title="hello"属性的p标签设置红色背景
+				title^="h" : 以h开头
+				title$="h" : 以h结尾
+				title*="h" : 包含h
+			 */
+			p[title="hello"]{
+				background-color: red;
+			}
+			
+			/* 
+				为第一个p标签设置绿色背景
+			 */
+			p:first-child{
+				background-color: green;
+			}
+			
+			/* 
+				div的第一个子元素P标签
+			 */
+			div > p:first-child{
+				background-color: greenyellow;
+			}
+			
+			/* 
+				最后一个P标签
+			 */
+			p:last-child{
+				background-color: blue;
+			}
+			
+			/* 
+				指定位置的P标签
+			 */
+			p:nth-child(3){
+				background-color: blueviolet;
+			}
+			
+			/* 
+				even:偶数
+				odd:奇数
+			 */
+			#aa p:nth-child(even){
+				background-color: #808080;
+			}
+			#aa p:nth-child(odd){
+				background-color: #ADFF2F;
+			}
+			
+			/* 
+				同类型排行
+			 */
+			#bb p:first-of-type{
+				background-color: #0000FF;
+			}
+			#bb p:last-of-type{
+				background-color: #008000;
+			}
+			#bb p:nth-of-type(2){
+				background-color: #8A2BE2;
+			}
+			
+		</style>
+	</head>
+	<body>
+		<!-- 
+			title属性，可用于任何标签，当鼠标移入时，显示title中的提示文字 
+		-->
+		<p>我是一个段落</p>
+		<p title="hello">我是一个段落</p>
+		<p>我是一个段落</p>
+		<p>我是一个段落</p>
+		<p>我是一个段落</p>
+		<p title="world">我是一个段落</p>
+		<div>
+			<p>我是一个段落</p>
+			<p>我是一个段落</p>
+		</div>
+		<div id="aa">
+			<p>我是一个段落</p>
+			<p>我是一个段落</p>
+			<p>我是一个段落</p>
+			<p>我是一个段落</p>
+			<p>我是一个段落</p>
+		</div>
+		<div id="bb">
+			<span>span</span>
+			<p>我是一个段落</p>
+			<p>我是一个段落</p>
+			<p>我是一个段落</p>
+			<p>我是一个段落</p>
+			<p>我是一个段落</p>
+			<span>span</span>
+		</div>
+	</body>
+</html>
